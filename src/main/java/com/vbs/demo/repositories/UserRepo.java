@@ -22,4 +22,6 @@ public interface UserRepo extends JpaRepository<User,Integer> {
     String findAllByUsernameContaining(String keyword);
 
     List<User> findAllByUsernameContainingIgnoreCaseAndRole(String keyword, String customer);
+
+    List<User> findByUsernameContainingIgnoreCaseAndRole(String keyword, String customer);
 }
