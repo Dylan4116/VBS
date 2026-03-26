@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1f3b4d, #4ca1af);
             min-height: 100vh;
             padding: 20px;
         }
@@ -33,7 +33,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0f2027, #203a43);
             padding: 30px;
             color: white;
             display: flex;
@@ -70,7 +70,7 @@
 
         .btn-header:hover {
             background: white;
-            color: #667eea;
+            color: #11998e;
         }
 
         .content {
@@ -99,7 +99,7 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #203a43, #2c5364);
             color: white;
             padding: 25px;
             border-radius: 12px;
@@ -155,9 +155,11 @@
             transition: border-color 0.3s;
         }
 
+        .search-box input:focus,
         .filter-box select:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #11998e;
+            box-shadow: 0 0 0 3px rgba(17, 153, 142, 0.15);
         }
 
         .search-box input {
@@ -169,14 +171,16 @@
             transition: border-color 0.3s;
         }
 
-        .search-box input:focus {
+        .search-box input:focus,
+        .filter-box select:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #11998e;
+            box-shadow: 0 0 0 3px rgba(17, 153, 142, 0.15);
         }
 
         .search-btn {
             padding: 12px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
             border: none;
             border-radius: 8px;
@@ -187,7 +191,7 @@
 
         .search-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
         }
 
         .users-section {
@@ -304,8 +308,8 @@
         }
 
         .btn-view {
-            background: #d4e7ff;
-            color: #4facfe;
+            background: #e0f7fa;
+            color: #11998e;
         }
 
         .btn-view:hover {
@@ -325,7 +329,7 @@
 
         .btn-add-user {
             padding: 12px 25px;
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
             border: none;
             border-radius: 8px;
@@ -401,14 +405,14 @@
         }
 
         .pagination button.active {
-            background: #667eea;
+            background: #11998e;
             color: white;
-            border-color: #667eea;
+            border-color: #11998e;
         }
 
         .pagination button:hover {
-            border-color: #667eea;
-            color: #667eea;
+            border-color: #11998e;
+            color: #11998e;
         }
 
         .pagination button:disabled {
@@ -528,8 +532,8 @@
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #11998e;
+            box-shadow: 0 0 0 3px rgba(17, 153, 142, 0.15);
         }
 
         .form-group input::placeholder {
@@ -545,7 +549,7 @@
 
         .btn-submit {
             padding: 12px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
             border: none;
             border-radius: 8px;
@@ -557,7 +561,7 @@
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
         }
 
         .btn-cancel {
@@ -897,16 +901,16 @@
         try {
             const response = await fetch(`${API_URL}/users?sortBy=${sortBy}&order=${order}`);
             if (!response.ok) throw new Error('Failed to load users');
-            
+
             allUsers = await response.json();
             filteredUsers = [...allUsers];
             currentSortBy = sortBy;
             currentSortOrder = order;
-            
+
             // Update dropdown values
             document.getElementById('sortBy').value = sortBy;
             document.getElementById('sortOrder').value = order;
-            
+
             updateStatistics();
             displayUsers(filteredUsers);
         } catch (error) {
@@ -1016,7 +1020,7 @@
         // Display pagination
         if (totalPages > 1) {
             let paginationHTML = '';
-            
+
             if (currentPage > 1) {
                 paginationHTML += `<button onclick="goToPage(${currentPage - 1})">← Previous</button>`;
             }
@@ -1112,7 +1116,7 @@
         }, 3000);
     }
 
-  
+
     function logout() {
         window.location.href = 'home.html';
     }
@@ -1193,7 +1197,7 @@
 
     function confirmDeleteUser(id, name) {
         userToDeleteId = id;
-        document.getElementById('deleteConfirmText').textContent = 
+        document.getElementById('deleteConfirmText').textContent =
             `Are you sure you want to delete "${name}"? This action cannot be undone.`;
         document.getElementById('deleteConfirmDialog').classList.add('show');
     }
@@ -1204,7 +1208,7 @@
         userToDeleteId = null;
     }
 
-   
+
     async function deleteUser() {
         if (!userToDeleteId) return;
 
@@ -1246,7 +1250,7 @@
         const viewModal = document.getElementById('viewUserModal');
         const addModal = document.getElementById('addUserModal');
         const deleteDialog = document.getElementById('deleteConfirmDialog');
-        
+
         if (e.target === viewModal) {
             viewModal.classList.remove('show');
         }

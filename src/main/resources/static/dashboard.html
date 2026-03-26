@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1f3b4d, #4ca1af);
             min-height: 100vh;
             padding: 20px;
         }
@@ -24,12 +24,12 @@
             margin: 0 auto;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(15, 32, 39, 0.4);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0f2027, #203a43);
             padding: 30px;
             color: white;
             display: flex;
@@ -97,7 +97,7 @@
         }
 
         .account-balance {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #203a43, #2c5364);
             color: white;
             padding: 30px;
             border-radius: 12px;
@@ -126,19 +126,16 @@
         .btn {
             padding: 15px;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 15px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             font-weight: 600;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+            color: white;
         }
 
         .btn-withdraw {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #ff6a6a, #ff3d3d);
             color: white;
         }
 
@@ -148,7 +145,7 @@
         }
 
         .btn-deposit {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
         }
 
@@ -158,7 +155,7 @@
         }
 
         .btn-transfer {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+             background: linear-gradient(135deg, #4facfe, #00f2fe);
             color: white;
         }
 
@@ -297,22 +294,25 @@
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
         }
 
+
+
         .btn-submit:hover {
+             background: linear-gradient(135deg, #0f9b8e, #2ecc71);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
         .btn-cancel {
-            background: #f0f0f0;
+            background: #e0e0e0;
             color: #333;
         }
 
         .btn-cancel:hover {
-            background: #e0e0e0;
+            background: #d6d6d6;
         }
 
         .message {
@@ -345,24 +345,29 @@
             padding: 20px;
         }
         .btn-action {
-    color: white;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
 
-.btn-action:hover {
-    transform: translateY(-2px);
-}
+            .btn-action:hover {
+                transform: translateY(-2px);
+            }
 
-.btn-passbook {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
+            .btn-passbook {
+                 background: linear-gradient(135deg, #203a43, #2c5364);
+                color: white;
+            }
 
-.btn-passbook:hover {
-    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.45);
-}
+            .btn-passbook:hover {
+                box-shadow: 0 6px 18px rgba(102, 126, 234, 0.45);
+            }
+
+            .btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+            }
 
 
         @media (max-width: 600px) {
